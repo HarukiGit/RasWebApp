@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask App</title>
+    <script>
+        function updateContent() {
+            fetch('/get_time')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('time').innerText = data.current_time;
+                });
+        }
+        setInterval(updateContent, 3000); // 3秒ごとに更新
+    </script>
+</head>
+
+<body>
+    <h1>Current Time:</h1>
+    <h2 id="time">{{ current_time }}</h2>
+</body>
+
+</html>
