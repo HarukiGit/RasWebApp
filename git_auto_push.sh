@@ -10,4 +10,4 @@ NOW=`date +"%Y-%m-%d %H:%M:%S"`
 git commit -m "$NOW"
 
 # リモートリポジトリにプッシュ
-git push origin master
+git push origin main
